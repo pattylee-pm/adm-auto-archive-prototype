@@ -11,7 +11,7 @@
 dialog.app-dialog{border:0;border-radius:12px;padding:0;width:min(620px,calc(100% - 32px));max-height:calc(100% - 32px);color:#24313c;box-shadow:0 24px 80px #102f4260;overflow:auto}dialog.app-dialog::backdrop{background:#142b36a8}.dialog-head{display:flex;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid #e7eef0}.dialog-head h2{margin:0;font-size:16px}.dialog-close{margin-left:auto;background:#f4f7f8;border:0;border-radius:6px;color:#70838d;font-size:21px;line-height:1;padding:5px 9px;cursor:pointer}.launcher-body{padding:26px}.launcher-body h3{margin:0 0 8px;font-size:19px}.launcher-body p{margin:0 0 20px;color:#7b8b94;line-height:1.6}.launcher-options{display:grid;grid-template-columns:1fr 1fr;gap:14px}.launcher-option{background:#fff;text-align:left;border:1px solid #dce8eb;border-radius:9px;padding:18px;cursor:pointer;color:#344751;min-height:140px}.launcher-option:hover{border-color:#29aab8;background:#f5fbfb}.launcher-option strong,.launcher-option small{display:block}.launcher-option strong{font-size:15px;margin:12px 0 6px}.launcher-option small{color:#84969e;line-height:1.5}.launcher-icon{font-size:22px}.ai-dialog{width:min(900px,calc(100% - 32px))!important}.ai-dialog .ai-panel{padding:0 25px 24px}.ai-dialog .ai-hero{padding:22px 20px 12px}.ai-dialog .notice{margin:12px 0}.ai-dialog .ai-chat{min-height:0}.ai-dialog .ai-messages{min-height:160px;max-height:30vh}.dialog-close:focus-visible,.launcher-option:focus-visible{outline:3px solid #8ad9e2;outline-offset:2px}@media(max-width:650px){.launcher-options{grid-template-columns:1fr}.launcher-option{min-height:0}.ai-dialog .ai-panel{padding:0 14px 14px}}
 </style>
 <style>
-.home-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.home-heading h1{font-size:22px;margin:0 0 6px}.home-heading p{color:#7b8b94;margin:0}.home-table{width:100%;border-collapse:collapse;font-size:13px}.home-table th,.home-table td{padding:14px 16px;text-align:left;border-bottom:1px solid #edf1f3}.home-table th{color:#91a0a8;font-size:12px;font-weight:600;background:#f8fafb}.home-table td:first-child{width:60%}.home-table tr:last-child td{border-bottom:0}.home-table .item-icon{margin-right:12px}.home-tip{margin-top:16px;padding:13px 15px;border-radius:7px;background:#f1f8fb;color:#547481;font-size:12px;line-height:1.6}@media(max-width:650px){.home-table th:last-child,.home-table td:last-child{display:none}.home-table th,.home-table td{padding:12px 9px}}
+.home-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.home-heading h1{font-size:22px;margin:0 0 6px}.home-heading p{color:#7b8b94;margin:0}.home-table{width:100%;border-collapse:collapse;font-size:13px}.home-table th,.home-table td{padding:14px 16px;text-align:left;border-bottom:1px solid #edf1f3}.home-table th{color:#91a0a8;font-size:12px;font-weight:600;background:#f8fafb}.home-table td:first-child{width:60%}.home-table tr:last-child td{border-bottom:0}.home-table .item-icon{margin-right:12px}.home-tip{margin-top:16px;padding:13px 15px;border-radius:7px;background:#f1f8fb;color:#547481;font-size:12px;line-height:1.6}.home-nav{width:100%;border:0;background:transparent;text-align:left;font:inherit;cursor:pointer}.home-nav:focus-visible{outline:2px solid #23a7b6;outline-offset:2px}@media(max-width:650px){.home-table th:last-child,.home-table td:last-child{display:none}.home-table th,.home-table td{padding:12px 9px}.sidebar>#homeNav{display:flex}}
 </style>
 </head>
 <body>
@@ -19,7 +19,7 @@ dialog.app-dialog{border:0;border-radius:12px;padding:0;width:min(620px,calc(100
   <header class="top"><div class="app-icon">🗂️</div><strong>檔案總管</strong><span class="muted" id="headerSection"></span><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div></header>
   <div class="toolbar"><button class="tool" type="button" id="backHome" aria-label="返回 Home">‹</button><button class="tool hidden" type="button" id="resetTop" aria-label="重設">↻</button><button class="tool" type="button" disabled>＋</button><div class="crumb"><b id="crumbSource">Home</b><span class="muted hidden" id="crumbSection"> &nbsp;›&nbsp; 智慧整理 &nbsp;›&nbsp; 快速歸檔</span></div><div class="search">⌕ &nbsp; 搜尋檔案</div></div>
   <div class="layout">
-    <aside class="sidebar"><div class="side-label">位置</div><div class="side-item"><span style="color:#18a1b0">◉</span> ADM</div><div class="side-item active" id="homeNav"><span class="folder">📁</span> Home</div><div class="side-item"><span class="folder">📁</span> 666</div><div class="side-item"><span class="folder">📁</span> Media</div><div class="side-item"><span class="folder">📁</span> Photos</div><div class="side-divider"></div><div class="side-label">外接裝置</div><div class="side-item" id="usbNav"><span class="device">▣</span> USB 隨身碟</div><div class="side-item" id="phoneNav"><span class="device">▣</span> 手機儲存空間</div><div class="side-divider"></div><div class="side-label">工具</div><div class="smart-nav"><button class="side-item nav-toggle active" id="smartNav" type="button" aria-haspopup="dialog"><span>✦ &nbsp; 智慧整理</span><span aria-hidden="true">›</span></button></div></aside>
+    <aside class="sidebar"><div class="side-label">位置</div><div class="side-item"><span style="color:#18a1b0">◉</span> ADM</div><button class="side-item home-nav active" id="homeNav" type="button" aria-current="page"><span class="folder">📁</span> Home</button><div class="side-item"><span class="folder">📁</span> 666</div><div class="side-item"><span class="folder">📁</span> Media</div><div class="side-item"><span class="folder">📁</span> Photos</div><div class="side-divider"></div><div class="side-label">外接裝置</div><div class="side-item" id="usbNav"><span class="device">▣</span> USB 隨身碟</div><div class="side-item" id="phoneNav"><span class="device">▣</span> 手機儲存空間</div><div class="side-divider"></div><div class="side-label">工具</div><div class="smart-nav"><button class="side-item nav-toggle" id="smartNav" type="button" aria-haspopup="dialog"><span>✦ &nbsp; 智慧整理</span><span aria-hidden="true">›</span></button></div></aside>
     <main class="main">
       <div id="homeView">
         <div class="back">檔案總管 &nbsp; / &nbsp; Home</div>
@@ -153,9 +153,11 @@ function state(){
 function render(){
   const s=state(), isNas=s.current==='nas', isUsb=s.source==='usb';
   $('crumbSource').textContent=$('archiveView').classList.contains('hidden')?'Home':isNas?s.source:isUsb?'USB 隨身碟':'手機儲存空間';
-  $('homeNav').classList.toggle('active',isNas);
-  $('usbNav').classList.toggle('active',!isNas&&isUsb);
-  $('phoneNav').classList.toggle('active',!isNas&&!isUsb);
+  const atHome=!$('homeView').classList.contains('hidden');
+  $('homeNav').classList.toggle('active',atHome);
+  $('smartNav').classList.toggle('active',!atHome);
+  if(atHome)$('homeNav').setAttribute('aria-current','page');else $('homeNav').removeAttribute('aria-current');
+  $('usbNav').classList.remove('active');$('phoneNav').classList.remove('active');
   $('notice').textContent=isNas
     ?'ⓘ 依條件整理 NAS 資料夾中的檔案；可手動執行或設定排程。本原型只顯示示意資料，不會連接或修改 NAS。'
     :'ⓘ 外接裝置依類型、日期或名稱分類到 NAS；正式操作建議先複製並保留來源。本原型不會連接裝置或移動檔案。';
@@ -226,10 +228,13 @@ $('archiveEntry').addEventListener('click',()=>{
   $('launcher').close();$('homeView').classList.add('hidden');$('archiveView').classList.remove('hidden');
   $('resetTop').classList.remove('hidden');$('crumbSection').classList.remove('hidden');$('headerSection').textContent=' / 快速歸檔';render();$('mode').focus();
 });
-$('backHome').addEventListener('click',()=>{
+function showHome(){
   $('archiveView').classList.add('hidden');$('homeView').classList.remove('hidden');
   $('resetTop').classList.add('hidden');$('crumbSection').classList.add('hidden');$('headerSection').textContent='';$('crumbSource').textContent='Home';
-});
+  render();
+}
+$('backHome').addEventListener('click',showHome);
+$('homeNav').addEventListener('click',showHome);
 $('aiEntry').addEventListener('click',()=>{$('launcher').close();$('aiWindow').showModal();$('aiInput').focus()});
 $('closeAi').addEventListener('click',()=>$('aiWindow').close());
 $('aiWindow').addEventListener('close',()=>$('smartNav').focus());
