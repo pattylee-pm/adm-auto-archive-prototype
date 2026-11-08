@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADM 檔案總管 · 自動歸檔原型</title>
+<style>
+:root{font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#24313c;background:#e8eef2;font-size:14px}*{box-sizing:border-box}body{margin:0}.desktop{min-height:100vh;padding:28px;background:radial-gradient(circle at 18% 5%,#bfd9e7 0,transparent 35%),linear-gradient(135deg,#d9e7ed,#e9edf0 55%,#cbdbe2)}.window{max-width:1510px;margin:auto;background:#fff;border-radius:12px;box-shadow:0 18px 65px #18394a25;overflow:hidden;min-height:calc(100vh - 56px)}.top{height:60px;padding:0 25px;display:flex;align-items:center;border-bottom:1px solid #e8edef;gap:12px}.app-icon{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(#ffca42,#efa500);font-size:18px}.top strong{font-size:17px;font-weight:600}.top .muted{margin-left:3px}.dots{margin-left:auto;display:flex;gap:9px}.dots i{width:11px;height:11px;border-radius:50%;background:#c9d3d8}.dots i:nth-child(2){background:#eebd51}.dots i:nth-child(3){background:#f07c7c}.toolbar{height:63px;display:flex;align-items:center;gap:9px;padding:0 24px;border-bottom:1px solid #e5ebee}.tool{border:1px solid #dce4e8;background:white;color:#43535d;border-radius:6px;padding:8px 12px;font:inherit}.crumb{flex:1;background:#f8fafb;border:1px solid #e0e7ea;border-radius:6px;padding:9px 14px;color:#51616b}.crumb b{color:#1e303b}.search{color:#8e9ba3;font-size:13px;border:1px solid #e0e7ea;border-radius:6px;padding:9px 14px;width:210px}.layout{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 179px)}.sidebar{border-right:1px solid #e8edef;padding:20px 12px}.side-label{color:#91a0a9;font-size:11px;font-weight:700;letter-spacing:1px;margin:0 12px 12px}.side-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:6px;color:#53636e}.side-item.active{color:#1688a5;background:#e5f5f9;font-weight:700}.folder{color:#eab44d;font-size:17px}.side-divider{border-top:1px solid #edf1f3;margin:18px 8px}.main{padding:27px 32px 38px;min-width:0}.back{color:#71838d;font-size:12px;margin-bottom:20px}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}.eyebrow{font-size:11px;color:#0c9bb2;font-weight:700;letter-spacing:1.2px;margin-bottom:8px}.heading h1{font-size:25px;margin:0 0 7px;letter-spacing:.3px}.heading p{color:#7b8b94;margin:0;line-height:1.6}.badge{background:#eaf7f8;color:#208a99;border:1px solid #d1edef;border-radius:20px;padding:7px 11px;font-size:12px;white-space:nowrap}.notice{margin:20px 0;background:#f1f8fb;border:1px solid #deedf2;color:#547481;border-radius:7px;padding:11px 14px;font-size:12px;line-height:1.6}.grid{display:grid;grid-template-columns:minmax(430px,1.15fr) minmax(330px,.85fr);gap:22px;align-items:start}.card{border:1px solid #e0e8ec;border-radius:9px;background:#fff;box-shadow:0 3px 12px #203c4a07}.card-head{padding:18px 21px;border-bottom:1px solid #edf1f3;display:flex;align-items:center;gap:11px}.number{background:#e6f5f7;color:#1397a7;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:12px;font-weight:700}.card-head h2{font-size:15px;margin:0}.card-head small{display:block;color:#9aa8af;margin-top:3px}.form{padding:20px 21px}.field{margin-bottom:20px}.label{display:block;font-weight:700;font-size:13px;margin-bottom:8px}.hint{font-weight:400;color:#94a1a8;font-size:12px}.control,select,input[type=text],input[type=date],input[type=time]{width:100%;height:39px;border:1px solid #dce5e9;background:#fff;border-radius:6px;padding:0 11px;font:inherit;color:#344751;outline:none}input:focus,select:focus{border-color:#23a7b6;box-shadow:0 0 0 3px #23a7b61a}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.path{display:flex;align-items:center;gap:9px;border:1px solid #dce5e9;border-radius:6px;height:43px;padding:0 11px;background:#fafcfc}.path select{border:0;background:transparent;padding:0;flex:1;height:38px;min-width:0}.check{display:flex;gap:8px;align-items:center;color:#667984;font-size:12px;margin-top:10px}.check input{accent-color:#16a2b3}.divider{border:0;border-top:1px solid #edf1f3;margin:20px 0}.segment{display:flex;border:1px solid #dce5e9;border-radius:6px;overflow:hidden}.segment label{flex:1;text-align:center;padding:9px;cursor:pointer;color:#73838b;font-size:12px}.segment label:has(input:checked){background:#e8f7f8;color:#138c9c;font-weight:700}.segment input{position:absolute;opacity:0;pointer-events:none}.caption{font-size:12px;color:#8b9aa2;line-height:1.6;margin:8px 0 0}.schedule-row{display:flex;gap:10px;align-items:center}.schedule-row select{flex:1}.schedule-row input{width:115px}.right-stack{display:grid;gap:16px}.summary{padding:18px 20px}.summary-title{font-size:13px;color:#7e909a;margin-bottom:13px}.flow{display:flex;align-items:center;gap:11px}.flow-box{flex:1;min-width:0;background:#f6fafb;border:1px solid #e7eff1;border-radius:7px;padding:11px 12px}.flow-box small{display:block;color:#96a4ac;font-size:11px;margin-bottom:5px}.flow-box strong{font-size:14px;overflow-wrap:anywhere}.arrow{color:#21a3b2;font-size:19px}.rule-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.tag{border-radius:4px;background:#f0f5f6;color:#64808a;padding:5px 8px;font-size:11px}.preview-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #edf1f3}.preview-head h2{font-size:15px;margin:0}.preview-head span{font-size:12px;color:#91a0a8}.file-list{padding:4px 20px}.file{display:flex;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid #f0f3f4}.file:last-child{border:0}.file-icon{width:33px;height:37px;background:#ebf6f8;border-radius:6px;color:#1699a9;display:grid;place-items:center;font-size:18px}.file-name{font-size:12px;font-weight:600;overflow-wrap:anywhere}.file-path{font-size:11px;color:#9baab1;margin-top:4px}.file-date{margin-left:auto;color:#9aa9b0;font-size:11px;white-space:nowrap}.empty{padding:28px 0;text-align:center;color:#97a6ae;font-size:12px;line-height:1.7}.preview-foot{background:#fafcfc;border-top:1px solid #edf1f3;padding:11px 20px;font-size:11px;color:#91a1a9}.actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px}.actions-note{color:#95a3aa;font-size:11px;line-height:1.5}.buttons{display:flex;gap:9px;white-space:nowrap}button{font:inherit;cursor:pointer}.btn{border-radius:6px;padding:10px 16px;border:1px solid #d8e2e6;background:white;color:#526671;font-weight:600;font-size:12px}.btn.primary{border-color:#10a0b0;background:#12a1b1;color:white}.btn:hover{filter:brightness(.97)}.btn:focus-visible{outline:3px solid #8ad9e2;outline-offset:2px}.status{margin-top:12px;font-size:12px;line-height:1.6;color:#0e8695}.status.error{color:#c25e42}.hidden{display:none!important}.modal-backdrop{position:fixed;inset:0;background:#142b36a8;display:grid;place-items:center;padding:20px}.modal{width:min(440px,100%);background:#fff;border-radius:10px;box-shadow:0 20px 70px #0003;padding:24px}.modal h2{margin:0 0 12px;font-size:18px}.modal p{line-height:1.7;color:#697c85}.modal .buttons{justify-content:flex-end;margin-top:20px}.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(max-width:1050px){.grid{grid-template-columns:1fr}.layout{grid-template-columns:190px 1fr}.main{padding:24px}.window{min-height:0}}@media(max-width:650px){.desktop{padding:0}.window{border-radius:0}.sidebar{display:none}.layout{display:block}.toolbar{padding:0 14px}.search,.toolbar .tool:nth-child(3){display:none}.main{padding:22px 16px}.heading h1{font-size:21px}.row{grid-template-columns:1fr}.actions{align-items:flex-start;flex-direction:column}.buttons{width:100%}.buttons .btn{flex:1}.flow{gap:6px}.top{padding:0 16px}}
+</style>
+</head>
+<body>
+<div class="desktop"><div class="window">
+  <header class="top"><div class="app-icon">🗂️</div><strong>檔案總管</strong><span class="muted" style="color:#a1afb6"> / 自動歸檔</span><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div></header>
+  <div class="toolbar"><button class="tool" type="button" aria-label="返回" id="back">‹</button><button class="tool" type="button" aria-label="重新設定" id="resetTop">↻</button><button class="tool" type="button" disabled>＋</button><div class="crumb"><b>Home</b> <span style="color:#a4b3b9"> &nbsp;›&nbsp; 自動歸檔</span></div><div class="search">⌕ &nbsp; 搜尋檔案</div></div>
+  <div class="layout">
+    <aside class="sidebar"><div class="side-label">位置</div><div class="side-item"><span style="color:#18a1b0">◉</span> ADM</div><div class="side-item active"><span class="folder">📁</span> Home</div><div class="side-item"><span class="folder">📁</span> 2026 shared folder</div><div class="side-item"><span class="folder">📁</span> 666</div><div class="side-item"><span class="folder">📁</span> Docker</div><div class="side-item"><span class="folder">📁</span> Download</div><div class="side-item"><span class="folder">📁</span> Media</div><div class="side-item"><span class="folder">📁</span> Music</div><div class="side-item"><span class="folder">📁</span> Photos</div><div class="side-divider"></div><div class="side-label">工具</div><div class="side-item active"><span>✦</span> 自動歸檔</div></aside>
+    <main class="main">
+      <div class="back">檔案總管 &nbsp; / &nbsp; 工具 &nbsp; / &nbsp; 自動歸檔</div>
+      <div class="heading"><div><div class="eyebrow">FILE EXPLORER · SMART ORGANIZE</div><h1>自動歸檔</h1><p>設定一次規則，讓檔案自動歸位。先預覽，再決定是否執行。</p></div><div class="badge">✦ &nbsp; 功能原型</div></div>
+      <div class="notice">ⓘ &nbsp;這是獨立的互動原型，使用示意檔案與模擬結果；不會連線 NAS、移動檔案或建立排程。</div>
+      <div class="grid">
+        <section class="card" aria-labelledby="config-title">
+          <div class="card-head"><div class="number">1</div><div><h2 id="config-title">設定歸檔規則</h2><small>選擇來源、條件與目的地</small></div></div>
+          <form id="ruleForm" class="form">
+            <div class="field"><label class="label" for="source">來源資料夾</label><div class="path"><span class="folder">📁</span><select id="source"><option>Home</option><option>Download</option><option>Music</option></select></div><label class="check"><input type="checkbox" id="recursive"> 包含子資料夾中的檔案</label></div>
+            <div class="field"><label class="label" for="extension">檔案類型 <span class="hint">（副檔名）</span></label><select id="extension"><option value="mp3">MP3 音訊檔（.mp3）</option><option value="pdf">PDF 文件（.pdf）</option><option value="jpg">JPG 圖片（.jpg）</option><option value="all">所有檔案</option></select><p class="caption">只處理符合條件的檔案，不會移動資料夾。</p></div>
+            <div class="row"><div class="field"><label class="label" for="keyword">檔名包含 <span class="hint">（選填）</span></label><input id="keyword" type="text" placeholder="例如：Part 13"></div><div class="field"><label class="label" for="date">修改日期早於 <span class="hint">（選填）</span></label><input id="date" type="date"><p class="caption">不包含所選日期當天。</p></div></div>
+            <hr class="divider">
+            <div class="field"><label class="label" for="destination">目的資料夾</label><div class="path"><span class="folder">📁</span><select id="destination"><option>666</option><option>Home</option><option>Download</option><option>Music</option></select></div></div>
+            <div class="field"><span class="label">處理方式</span><div class="segment"><label><input type="radio" name="action" value="move" checked>移動檔案</label><label><input type="radio" name="action" value="copy">複製檔案</label></div><p class="caption">移動會從來源移除檔案；遇到同名檔案時，示意規則為跳過，不覆蓋。</p></div>
+            <div class="field" style="margin-bottom:0"><label class="label" for="schedule">執行時間</label><div class="schedule-row"><select id="schedule"><option value="once">手動執行一次</option><option value="daily">每天</option><option value="weekly">每週一</option></select><input id="time" type="time" value="09:00" aria-label="排程時間" class="hidden"></div><p class="caption">自動執行會套用相同條件；此原型不會建立真實排程。</p></div>
+          </form>
+        </section>
+        <div class="right-stack">
+          <section class="card" aria-labelledby="summary-title"><div class="card-head"><div class="number">2</div><div><h2 id="summary-title">確認歸檔內容</h2><small>變更設定後，預覽會即時更新</small></div></div><div class="summary"><div class="summary-title">歸檔路徑</div><div class="flow"><div class="flow-box"><small>來源資料夾</small><strong id="fromText">📁 Home</strong></div><div class="arrow">→</div><div class="flow-box"><small>目的資料夾</small><strong id="toText">📁 666</strong></div></div><div class="rule-tags" id="tags"></div></div></section>
+          <section class="card" aria-labelledby="preview-title"><div class="preview-head"><h2 id="preview-title">符合條件的檔案</h2><span id="count"></span></div><div id="fileList" class="file-list"></div><div class="preview-foot">ⓘ &nbsp;此清單為示意資料，並非 NAS 即時掃描結果。</div></section>
+          <div class="actions"><div class="actions-note">執行前可先檢查條件及目的地。<br>此原型不會更動實際檔案。</div><div class="buttons"><button class="btn" type="button" id="reset">重設</button><button class="btn primary" type="button" id="review">確認並模擬執行 →</button></div></div><div id="status" class="status" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div></div>
+<div class="modal-backdrop hidden" id="modal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalText"><h2 id="modalTitle">確認模擬歸檔</h2><p id="modalText"></p><div class="buttons"><button class="btn" id="cancel" type="button">取消</button><button class="btn primary" id="confirm" type="button">確認模擬</button></div></div></div>
+<script>
+const examples=[
+  {root:'Home',path:'Home',name:'Part 13-愛在德魯納.mp3',date:'2023-03-09'},
+  {root:'Home',path:'Home',name:'旅行歌單.mp3',date:'2026-04-15'},
+  {root:'Home',path:'Home/Documents',name:'會議錄音.mp3',date:'2026-05-06'},
+  {root:'Home',path:'Home',name:'2026 COMPUTEX.pdf',date:'2026-06-05'},
+  {root:'Home',path:'Home/Pictures',name:'風景.jpg',date:'2026-05-04'},
+  {root:'Download',path:'Download',name:'下載的音樂.mp3',date:'2026-07-12'},
+  {root:'Music',path:'Music',name:'輕音樂.mp3',date:'2026-08-20'}
+];
+const $=id=>document.getElementById(id);
+const form=$('ruleForm'), status=$('status'), modal=$('modal');
+function state(){
+  const source=$('source').value,destination=$('destination').value,extension=$('extension').value,keyword=$('keyword').value.trim().toLocaleLowerCase(),date=$('date').value,recursive=$('recursive').checked,action=form.elements.action.value,schedule=$('schedule').value,time=$('time').value;
+  const files=examples.filter(f=>f.root===source&&(recursive||f.path===source)&&(extension==='all'||f.name.toLocaleLowerCase().endsWith('.'+extension))&&(!keyword||f.name.toLocaleLowerCase().includes(keyword))&&(!date||f.date<date));
+  return {source,destination,extension,keyword,date,recursive,action,schedule,time,files};
+}
+function render(){
+  const s=state(); $('fromText').textContent='📁 '+s.source; $('toText').textContent='📁 '+s.destination;
+  $('time').classList.toggle('hidden',s.schedule==='once');
+  $('tags').replaceChildren(...[
+    s.extension==='all'?'所有檔案':'.'+s.extension,
+    s.recursive?'包含子資料夾':'僅來源資料夾',
+    s.action==='move'?'移動':'複製',
+    ...(s.keyword?['檔名包含：'+$('keyword').value.trim()]:[]),
+    ...(s.date?['修改日期早於 '+s.date]:[]),
+    s.schedule==='once'?'手動執行':(s.schedule==='daily'?'每天 ':'每週一 ')+s.time
+  ].map(text=>{const el=document.createElement('span');el.className='tag';el.textContent=text;return el}));
+  $('count').textContent=s.files.length+' 個示意檔案'; $('fileList').replaceChildren();
+  if(!s.files.length){const el=document.createElement('div');el.className='empty';el.textContent='沒有符合條件的示意檔案，請調整篩選條件。';$('fileList').append(el)}
+  for(const file of s.files){const row=document.createElement('div');row.className='file';const icon=document.createElement('div');icon.className='file-icon';icon.textContent=file.name.toLowerCase().endsWith('.mp3')?'♫':'▤';const info=document.createElement('div');const name=document.createElement('div');name.className='file-name';name.textContent=file.name;const path=document.createElement('div');path.className='file-path';path.textContent=file.path;info.append(name,path);const date=document.createElement('div');date.className='file-date';date.textContent=file.date;row.append(icon,info,date);$('fileList').append(row)}
+  status.textContent='';status.classList.remove('error');
+}
+form.addEventListener('input',render);form.addEventListener('change',render);
+function reset(){form.reset();render()}
+$('reset').addEventListener('click',reset);$('resetTop').addEventListener('click',reset);
+$('back').addEventListener('click',()=>{status.textContent='這是獨立原型，未連接檔案總管。';status.classList.remove('error')});
+function closeModal(){modal.classList.add('hidden');$('review').focus()}
+$('review').addEventListener('click',()=>{
+  const s=state();
+  if(s.source===s.destination){status.textContent='來源與目的資料夾不可相同，請重新選擇。';status.classList.add('error');return}
+  if(!s.files.length){status.textContent='目前沒有符合條件的示意檔案，請先調整條件。';status.classList.add('error');return}
+  if(s.schedule!=='once'&&!s.time){status.textContent='請選擇排程時間。';status.classList.add('error');return}
+  const when=s.schedule==='once'?'手動執行一次':(s.schedule==='daily'?'每天 ':'每週一 ')+s.time;
+  $('modalText').textContent=`模擬${s.action==='move'?'移動':'複製'} ${s.files.length} 個符合條件的檔案，從 ${s.source} 到 ${s.destination}。執行時間：${when}。同名檔案將跳過。此操作不會變動 NAS。`;
+  modal.classList.remove('hidden');$('cancel').focus();
+});
+$('cancel').addEventListener('click',closeModal);
+$('confirm').addEventListener('click',()=>{const s=state();closeModal();status.textContent=`模擬完成：${s.files.length} 個示意檔案符合條件。未移動或複製任何實際檔案，也未建立排程。`;status.classList.remove('error')});
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.classList.contains('hidden'))closeModal()});
+render();
+</script>
+</body>
+</html>
