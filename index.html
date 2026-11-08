@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ADM 檔案總管 · 智慧整理</title>
 <style>
-:root{font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#24313c;background:#e8eef2;font-size:14px}*{box-sizing:border-box}body{margin:0}.desktop{min-height:100vh;padding:28px;background:radial-gradient(circle at 18% 5%,#bfd9e7 0,transparent 35%),linear-gradient(135deg,#d9e7ed,#e9edf0 55%,#cbdbe2)}.window{max-width:1510px;margin:auto;background:#fff;border-radius:12px;box-shadow:0 18px 65px #18394a25;overflow:hidden;min-height:calc(100vh - 56px)}.top{height:60px;padding:0 25px;display:flex;align-items:center;border-bottom:1px solid #e8edef;gap:12px}.app-icon{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(#ffca42,#efa500);font-size:18px}.top strong{font-size:17px;font-weight:600}.muted{color:#91a0a8}.dots{margin-left:auto;display:flex;gap:9px}.dots i{width:11px;height:11px;border-radius:50%;background:#c9d3d8}.dots i:nth-child(2){background:#eebd51}.dots i:nth-child(3){background:#f07c7c}.toolbar{height:63px;display:flex;align-items:center;gap:9px;padding:0 24px;border-bottom:1px solid #e5ebee}.tool{border:1px solid #dce4e8;background:white;color:#43535d;border-radius:6px;padding:8px 12px;font:inherit}.crumb{flex:1;background:#f8fafb;border:1px solid #e0e7ea;border-radius:6px;padding:9px 14px;color:#51616b}.crumb b{color:#1e303b}.search{color:#8e9ba3;font-size:13px;border:1px solid #e0e7ea;border-radius:6px;padding:9px 14px;width:210px}.layout{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 179px)}.sidebar{border-right:1px solid #e8edef;padding:20px 12px}.side-label{color:#91a0a9;font-size:11px;font-weight:700;letter-spacing:1px;margin:0 12px 12px}.side-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:6px;color:#53636e}.side-item.active{color:#1688a5;background:#e5f5f9;font-weight:700}.folder{color:#eab44d;font-size:17px}.device{color:#17a0b1;font-size:16px}.side-divider{border-top:1px solid #edf1f3;margin:18px 8px}.main{padding:27px 32px 38px;min-width:0}.back{color:#71838d;font-size:12px;margin-bottom:20px}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}.eyebrow{font-size:11px;color:#0c9bb2;font-weight:700;letter-spacing:1.2px;margin-bottom:8px}.heading h1{font-size:25px;margin:0 0 7px}.heading p{color:#7b8b94;margin:0;line-height:1.6}.badge{background:#eaf7f8;color:#208a99;border:1px solid #d1edef;border-radius:20px;padding:7px 11px;font-size:12px;white-space:nowrap}.notice{margin:20px 0;background:#f1f8fb;border:1px solid #deedf2;color:#547481;border-radius:7px;padding:11px 14px;font-size:12px;line-height:1.6}.grid{display:grid;grid-template-columns:minmax(430px,1.08fr) minmax(360px,.92fr);gap:22px;align-items:start}.card{border:1px solid #e0e8ec;border-radius:9px;background:#fff;box-shadow:0 3px 12px #203c4a07}.card-head{padding:18px 21px;border-bottom:1px solid #edf1f3;display:flex;align-items:center;gap:11px}.number{background:#e6f5f7;color:#1397a7;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:12px;font-weight:700}.card-head h2{font-size:15px;margin:0}.card-head small{display:block;color:#9aa8af;margin-top:3px}.form{padding:20px 21px}.field{margin-bottom:20px}.label{display:block;font-weight:700;font-size:13px;margin-bottom:8px}.hint{font-weight:400;color:#94a1a8;font-size:12px}select,input[type=text],input[type=date],input[type=time]{width:100%;height:39px;border:1px solid #dce5e9;background:#fff;border-radius:6px;padding:0 11px;font:inherit;color:#344751;outline:none}input:focus,select:focus{border-color:#23a7b6;box-shadow:0 0 0 3px #23a7b61a}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.path{display:flex;align-items:center;gap:9px;border:1px solid #dce5e9;border-radius:6px;height:43px;padding:0 11px;background:#fafcfc}.path select{border:0;background:transparent;padding:0;flex:1;height:38px;min-width:0}.device-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:9px;color:#8999a1;font-size:11px}.mounted{color:#258875}.mounted:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#39b38e;margin-right:6px}.meter{height:5px;border-radius:5px;background:#edf2f3;margin-top:11px;overflow:hidden}.meter span{display:block;height:100%;background:#34aeb8;border-radius:5px}.check{display:flex;gap:8px;align-items:center;color:#667984;font-size:12px;margin-top:10px}.check input,.file-select,.select-all input{accent-color:#16a2b3}.divider{border:0;border-top:1px solid #edf1f3;margin:20px 0}.segment{display:flex;border:1px solid #dce5e9;border-radius:6px;overflow:hidden}.segment label{flex:1;text-align:center;padding:10px 6px;cursor:pointer;color:#73838b;font-size:12px}.segment label:has(input:checked){background:#e8f7f8;color:#138c9c;font-weight:700}.segment input{position:absolute;opacity:0;pointer-events:none}.caption{font-size:12px;color:#8b9aa2;line-height:1.6;margin:8px 0 0}.path-dest{display:flex;align-items:center;gap:9px;border:1px solid #dce5e9;border-radius:6px;height:43px;padding:0 11px;background:#fafcfc}.path-dest select{border:0;background:transparent;padding:0;flex:1;height:38px}.device-meta{font-size:11px}.right-stack{display:grid;gap:16px}.summary{padding:18px 20px}.summary-title{font-size:13px;color:#7e909a;margin-bottom:13px}.flow{display:flex;align-items:center;gap:11px}.flow-box{flex:1;min-width:0;background:#f6fafb;border:1px solid #e7eff1;border-radius:7px;padding:11px 12px}.flow-box small{display:block;color:#96a4ac;font-size:11px;margin-bottom:5px}.flow-box strong{font-size:14px;overflow-wrap:anywhere}.arrow{color:#21a3b2;font-size:19px}.rule-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.tag{border-radius:4px;background:#f0f5f6;color:#64808a;padding:5px 8px;font-size:11px}.preview-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #edf1f3}.preview-head h2{font-size:15px;margin:0}.preview-head span{font-size:12px;color:#91a0a8}.preview-actions{display:flex;justify-content:space-between;align-items:center;padding:10px 20px;border-bottom:1px solid #edf1f3;color:#82939b;font-size:11px}.text-button{border:0;background:none;color:#148e9d;cursor:pointer;font:inherit}.file-list{padding:3px 20px}.file{display:grid;grid-template-columns:18px 34px minmax(0,1fr) minmax(95px,.72fr);align-items:center;gap:9px;padding:11px 0;border-bottom:1px solid #f0f3f4}.file:last-child{border:0}.file-select{accent-color:#14a2b1}.file-icon{width:32px;height:35px;background:#ebf6f8;border-radius:6px;color:#1699a9;display:grid;place-items:center;font-size:17px}.file-name{font-size:12px;font-weight:600;overflow-wrap:anywhere}.file-path{font-size:11px;color:#9baab1;margin-top:4px;overflow-wrap:anywhere}.file-target{font-size:11px;color:#43818a;overflow-wrap:anywhere}.file-target small{display:block;color:#9baab1;margin-bottom:3px}.file-date{font-size:10px;color:#9aa9b0;margin-top:4px}.empty{padding:28px 0;text-align:center;color:#97a6ae;font-size:12px;line-height:1.7}.preview-foot{background:#fafcfc;border-top:1px solid #edf1f3;padding:11px 20px;font-size:11px;color:#91a1a9}.actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px}.actions-note{color:#95a3aa;font-size:11px;line-height:1.5}.buttons{display:flex;gap:9px;white-space:nowrap}button{font:inherit;cursor:pointer}.btn{border-radius:6px;padding:10px 16px;border:1px solid #d8e2e6;background:white;color:#526671;font-weight:600;font-size:12px}.btn.primary{border-color:#10a0b0;background:#12a1b1;color:white}.btn:hover{filter:brightness(.97)}.btn:focus-visible{outline:3px solid #8ad9e2;outline-offset:2px}.status{margin-top:12px;font-size:12px;line-height:1.6;color:#0e8695}.status.error{color:#c25e42}.hidden{display:none!important}.modal-backdrop{position:fixed;inset:0;background:#142b36a8;display:grid;place-items:center;padding:20px}.modal{width:min(460px,100%);background:#fff;border-radius:10px;box-shadow:0 20px 70px #0003;padding:24px}.modal h2{margin:0 0 12px;font-size:18px}.modal p{line-height:1.7;color:#697c85}.modal .buttons{justify-content:flex-end;margin-top:20px}.ocr-tools{display:grid;gap:14px;padding:15px 20px;border-top:1px solid #edf1f3}.tool-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:#71838d}.tool-row strong{font-weight:600;color:#526671}.pill-choice{border:1px solid #dce5e9;background:#fff;border-radius:6px;padding:7px 10px;color:#61747d;font-size:12px}.pill-choice.selected{background:#e8f7f8;border-color:#bfe4e8;color:#138c9c;font-weight:700}.ocr-table-wrap{overflow:auto;max-height:390px}.ocr-table{border-collapse:collapse;min-width:780px;width:100%;font-size:12px}.ocr-table th,.ocr-table td{border-bottom:1px solid #edf1f3;padding:8px;text-align:left;vertical-align:middle}.ocr-table th{position:sticky;top:0;background:#f8fafb;color:#74858d;z-index:1}.ocr-table input[type=text]{min-width:100px;height:32px;padding:0 7px;border-color:transparent;background:transparent;font-size:12px}.ocr-table input[type=text]:focus{background:white;border-color:#23a7b6}.ocr-file-list{display:grid;gap:7px;margin-top:10px}.ocr-photo{display:flex;align-items:center;gap:9px;padding:8px 10px;background:#f8fafb;border:1px solid #edf1f3;border-radius:6px;color:#5d717b;font-size:12px}.ocr-photo input{accent-color:#16a2b3}.ocr-status{background:#eaf7f4;color:#39806f;border-radius:6px;padding:10px 12px;font-size:12px;line-height:1.6}.ocr-groups{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}.ocr-group{padding:7px 10px;border-radius:5px;background:#eef5f6;color:#4f7881;font-size:11px}
+:root{font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#24313c;background:#e8eef2;font-size:14px}*{box-sizing:border-box}body{margin:0}.desktop{min-height:100vh;padding:28px;background:radial-gradient(circle at 18% 5%,#bfd9e7 0,transparent 35%),linear-gradient(135deg,#d9e7ed,#e9edf0 55%,#cbdbe2)}.window{max-width:1510px;margin:auto;background:#fff;border-radius:12px;box-shadow:0 18px 65px #18394a25;overflow:hidden;min-height:calc(100vh - 56px)}.top{height:60px;padding:0 25px;display:flex;align-items:center;border-bottom:1px solid #e8edef;gap:12px}.app-icon{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(#ffca42,#efa500);font-size:18px}.top strong{font-size:17px;font-weight:600}.muted{color:#91a0a8}.dots{margin-left:auto;display:flex;gap:9px}.dots i{width:11px;height:11px;border-radius:50%;background:#c9d3d8}.dots i:nth-child(2){background:#eebd51}.dots i:nth-child(3){background:#f07c7c}.toolbar{height:63px;display:flex;align-items:center;gap:9px;padding:0 24px;border-bottom:1px solid #e5ebee}.tool{border:1px solid #dce4e8;background:white;color:#43535d;border-radius:6px;padding:8px 12px;font:inherit}.crumb{flex:1;background:#f8fafb;border:1px solid #e0e7ea;border-radius:6px;padding:9px 14px;color:#51616b}.crumb b{color:#1e303b}.search{color:#8e9ba3;font-size:13px;border:1px solid #e0e7ea;border-radius:6px;padding:9px 14px;width:210px}.layout{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 179px)}.sidebar{border-right:1px solid #e8edef;padding:20px 12px}.side-label{color:#91a0a9;font-size:11px;font-weight:700;letter-spacing:1px;margin:0 12px 12px}.side-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:6px;color:#53636e}.side-item.active{color:#1688a5;background:#e5f5f9;font-weight:700}.folder{color:#eab44d;font-size:17px}.device{color:#17a0b1;font-size:16px}.side-divider{border-top:1px solid #edf1f3;margin:18px 8px}.main{padding:27px 32px 38px;min-width:0}.back{color:#71838d;font-size:12px;margin-bottom:20px}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}.eyebrow{font-size:11px;color:#0c9bb2;font-weight:700;letter-spacing:1.2px;margin-bottom:8px}.heading h1{font-size:25px;margin:0 0 7px}.heading p{color:#7b8b94;margin:0;line-height:1.6}.badge{background:#eaf7f8;color:#208a99;border:1px solid #d1edef;border-radius:20px;padding:7px 11px;font-size:12px;white-space:nowrap}.notice{margin:20px 0;background:#f1f8fb;border:1px solid #deedf2;color:#547481;border-radius:7px;padding:11px 14px;font-size:12px;line-height:1.6}.grid{display:grid;grid-template-columns:minmax(430px,1.08fr) minmax(360px,.92fr);gap:22px;align-items:start}.card{border:1px solid #e0e8ec;border-radius:9px;background:#fff;box-shadow:0 3px 12px #203c4a07}.card-head{padding:18px 21px;border-bottom:1px solid #edf1f3;display:flex;align-items:center;gap:11px}.number{background:#e6f5f7;color:#1397a7;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:12px;font-weight:700}.card-head h2{font-size:15px;margin:0}.card-head small{display:block;color:#9aa8af;margin-top:3px}.form{padding:20px 21px}.field{margin-bottom:20px}.label{display:block;font-weight:700;font-size:13px;margin-bottom:8px}.hint{font-weight:400;color:#94a1a8;font-size:12px}select,input[type=text],input[type=date],input[type=time]{width:100%;height:39px;border:1px solid #dce5e9;background:#fff;border-radius:6px;padding:0 11px;font:inherit;color:#344751;outline:none}input:focus,select:focus{border-color:#23a7b6;box-shadow:0 0 0 3px #23a7b61a}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}.path{display:flex;align-items:center;gap:9px;border:1px solid #dce5e9;border-radius:6px;height:43px;padding:0 11px;background:#fafcfc}.path select{border:0;background:transparent;padding:0;flex:1;height:38px;min-width:0}.device-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:9px;color:#8999a1;font-size:11px}.mounted{color:#258875}.mounted:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#39b38e;margin-right:6px}.meter{height:5px;border-radius:5px;background:#edf2f3;margin-top:11px;overflow:hidden}.meter span{display:block;height:100%;background:#34aeb8;border-radius:5px}.check{display:flex;gap:8px;align-items:center;color:#667984;font-size:12px;margin-top:10px}.check input,.file-select,.select-all input{accent-color:#16a2b3}.divider{border:0;border-top:1px solid #edf1f3;margin:20px 0}.segment{display:flex;border:1px solid #dce5e9;border-radius:6px;overflow:hidden}.segment label{flex:1;text-align:center;padding:10px 6px;cursor:pointer;color:#73838b;font-size:12px}.segment label:has(input:checked){background:#e8f7f8;color:#138c9c;font-weight:700}.segment input{position:absolute;opacity:0;pointer-events:none}.caption{font-size:12px;color:#8b9aa2;line-height:1.6;margin:8px 0 0}.path-dest{display:flex;align-items:center;gap:9px;border:1px solid #dce5e9;border-radius:6px;height:43px;padding:0 11px;background:#fafcfc}.path-dest select{border:0;background:transparent;padding:0;flex:1;height:38px}.device-meta{font-size:11px}.right-stack{display:grid;gap:16px}.summary{padding:18px 20px}.summary-title{font-size:13px;color:#7e909a;margin-bottom:13px}.flow{display:flex;align-items:center;gap:11px}.flow-box{flex:1;min-width:0;background:#f6fafb;border:1px solid #e7eff1;border-radius:7px;padding:11px 12px}.flow-box small{display:block;color:#96a4ac;font-size:11px;margin-bottom:5px}.flow-box strong{font-size:14px;overflow-wrap:anywhere}.arrow{color:#21a3b2;font-size:19px}.rule-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.tag{border-radius:4px;background:#f0f5f6;color:#64808a;padding:5px 8px;font-size:11px}.preview-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #edf1f3}.preview-head h2{font-size:15px;margin:0}.preview-head span{font-size:12px;color:#91a0a8}.preview-actions{display:flex;justify-content:space-between;align-items:center;padding:10px 20px;border-bottom:1px solid #edf1f3;color:#82939b;font-size:11px}.text-button{border:0;background:none;color:#148e9d;cursor:pointer;font:inherit}.file-list{padding:3px 20px}.file{display:grid;grid-template-columns:18px 34px minmax(0,1fr) minmax(95px,.72fr);align-items:center;gap:9px;padding:11px 0;border-bottom:1px solid #f0f3f4}.file:last-child{border:0}.file-select{accent-color:#14a2b1}.file-icon{width:32px;height:35px;background:#ebf6f8;border-radius:6px;color:#1699a9;display:grid;place-items:center;font-size:17px}.file-name{font-size:12px;font-weight:600;overflow-wrap:anywhere}.file-path{font-size:11px;color:#9baab1;margin-top:4px;overflow-wrap:anywhere}.file-target{font-size:11px;color:#43818a;overflow-wrap:anywhere}.file-target small{display:block;color:#9baab1;margin-bottom:3px}.file-date{font-size:10px;color:#9aa9b0;margin-top:4px}.empty{padding:28px 0;text-align:center;color:#97a6ae;font-size:12px;line-height:1.7}.preview-foot{background:#fafcfc;border-top:1px solid #edf1f3;padding:11px 20px;font-size:11px;color:#91a1a9}.actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px}.actions-note{color:#95a3aa;font-size:11px;line-height:1.5}.buttons{display:flex;gap:9px;white-space:nowrap}button{font:inherit;cursor:pointer}.btn{border-radius:6px;padding:10px 16px;border:1px solid #d8e2e6;background:white;color:#526671;font-weight:600;font-size:12px}.btn.primary{border-color:#10a0b0;background:#12a1b1;color:white}.btn:hover{filter:brightness(.97)}.btn:focus-visible{outline:3px solid #8ad9e2;outline-offset:2px}.status{margin-top:12px;font-size:12px;line-height:1.6;color:#0e8695}.status.error{color:#c25e42}.hidden{display:none!important}.modal-backdrop{position:fixed;inset:0;background:#142b36a8;display:grid;place-items:center;padding:20px}.modal{width:min(460px,100%);background:#fff;border-radius:10px;box-shadow:0 20px 70px #0003;padding:24px}.modal h2{margin:0 0 12px;font-size:18px}.modal p{line-height:1.7;color:#697c85}.modal .buttons{justify-content:flex-end;margin-top:20px}
 @media(max-width:1050px){.grid{grid-template-columns:1fr}.layout{grid-template-columns:190px 1fr}.main{padding:24px}.window{min-height:0}}@media(max-width:650px){.desktop{padding:0}.window{border-radius:0}.sidebar{display:none}.layout{display:block}.toolbar{padding:0 14px}.search,.toolbar .tool:nth-child(3){display:none}.main{padding:22px 16px}.heading h1{font-size:21px}.row{grid-template-columns:1fr}.actions{align-items:flex-start;flex-direction:column}.buttons{width:100%}.buttons .btn{flex:1}.flow{gap:6px}.top{padding:0 16px}.file{grid-template-columns:18px 30px minmax(0,1fr)}.file-target{grid-column:3;grid-row:2}.file-date{display:none}}
+.nav-toggle,.nav-link{width:100%;border:0;background:transparent;text-align:left;font:inherit;cursor:pointer}.nav-toggle{justify-content:space-between}.nav-link{padding-left:39px;font-size:13px}.nav-link[aria-current="page"]{color:#1688a5;background:#e5f5f9;font-weight:700}.nav-toggle:focus-visible,.nav-link:focus-visible,.prompt:focus-visible{outline:2px solid #23a7b6;outline-offset:2px}.nav-chevron{font-size:12px;transition:transform .15s}.nav-toggle[aria-expanded="false"] .nav-chevron{transform:rotate(-90deg)}.ai-panel{max-width:900px;margin:0 auto}.ai-hero{text-align:center;padding:38px 20px 24px}.ai-icon{width:48px;height:48px;border-radius:16px;background:#dff5f6;color:#0c9aa8;display:grid;place-items:center;font-size:24px;margin:0 auto 15px}.ai-hero h1{margin:0 0 8px;font-size:25px}.ai-hero p{margin:0;color:#7b8b94;line-height:1.6}.ai-chat{min-height:400px;display:flex;flex-direction:column}.ai-messages{padding:22px;display:flex;flex-direction:column;gap:14px;min-height:210px;max-height:430px;overflow:auto}.bubble{max-width:82%;padding:12px 15px;border-radius:12px;background:#f1f7f8;color:#49616d;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere}.bubble.user{align-self:flex-end;background:#e5f5f9;color:#216b79}.bubble strong{display:block;font-size:11px;color:#0c9aa8;margin-bottom:3px}.ai-suggestions{padding:0 22px 16px;display:flex;gap:8px;flex-wrap:wrap}.prompt{border:1px solid #dce8eb;border-radius:18px;background:white;padding:8px 12px;color:#61818a;font-size:12px;cursor:pointer}.ai-compose{display:flex;gap:10px;padding:16px 22px;border-top:1px solid #edf1f3}.ai-compose input{flex:1;min-width:0}.ai-note{padding:0 22px 17px;font-size:11px;line-height:1.6;color:#91a0a8}@media(max-width:650px){.sidebar{display:block;padding:8px 12px;border-right:0;border-bottom:1px solid #e8edef}.sidebar>.side-label,.sidebar>.side-item,.sidebar>.side-divider{display:none}.sidebar .smart-nav{display:block}.nav-toggle{margin:0}.nav-items:not(.hidden){display:flex;gap:5px}.nav-link{width:auto;padding:8px 12px}.ai-hero{padding-top:18px}.bubble{max-width:95%}.ai-compose{padding:14px}.ai-compose .btn{padding:10px}.ai-messages{padding:14px}}
 </style>
 </head>
 <body>
@@ -14,16 +15,17 @@
   <header class="top"><div class="app-icon">🗂️</div><strong>檔案總管</strong><span class="muted"> / 智慧整理</span><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div></header>
   <div class="toolbar"><button class="tool" type="button" aria-label="返回">‹</button><button class="tool" type="button" id="resetTop" aria-label="重設">↻</button><button class="tool" type="button" disabled>＋</button><div class="crumb"><b id="crumbSource">Home</b><span class="muted"> &nbsp;›&nbsp; 智慧整理</span></div><div class="search">⌕ &nbsp; 搜尋檔案</div></div>
   <div class="layout">
-    <aside class="sidebar"><div class="side-label">位置</div><div class="side-item"><span style="color:#18a1b0">◉</span> ADM</div><div class="side-item active" id="homeNav"><span class="folder">📁</span> Home</div><div class="side-item"><span class="folder">📁</span> 666</div><div class="side-item"><span class="folder">📁</span> Media</div><div class="side-item"><span class="folder">📁</span> Photos</div><div class="side-divider"></div><div class="side-label">外接裝置</div><div class="side-item" id="usbNav"><span class="device">▣</span> USB 隨身碟</div><div class="side-item" id="phoneNav"><span class="device">▣</span> 手機儲存空間</div><div class="side-divider"></div><div class="side-label">工具</div><div class="side-item active"><span>✦</span> 智慧整理</div></aside>
+    <aside class="sidebar"><div class="side-label">位置</div><div class="side-item"><span style="color:#18a1b0">◉</span> ADM</div><div class="side-item active" id="homeNav"><span class="folder">📁</span> Home</div><div class="side-item"><span class="folder">📁</span> 666</div><div class="side-item"><span class="folder">📁</span> Media</div><div class="side-item"><span class="folder">📁</span> Photos</div><div class="side-divider"></div><div class="side-label">外接裝置</div><div class="side-item" id="usbNav"><span class="device">▣</span> USB 隨身碟</div><div class="side-item" id="phoneNav"><span class="device">▣</span> 手機儲存空間</div><div class="side-divider"></div><div class="side-label">工具</div><div class="smart-nav"><button class="side-item nav-toggle" id="smartNav" type="button" aria-expanded="true" aria-controls="smartEntries"><span>✦ &nbsp; 智慧整理</span><span class="nav-chevron" aria-hidden="true">⌄</span></button><div id="smartEntries" class="nav-items"><button class="side-item nav-link" id="archiveEntry" type="button" aria-current="page">快速歸檔</button><button class="side-item nav-link" id="aiEntry" type="button">NASH AI</button></div></div></aside>
     <main class="main">
-      <div class="back">檔案總管 &nbsp; / &nbsp; 智慧整理</div>
-      <div class="heading"><div><div class="eyebrow">FILE EXPLORER · SMART ORGANIZE</div><h1>智慧整理</h1><p>整理 NAS 裡的散亂檔案，或將外接裝置內容歸檔到 NAS。</p></div><div class="badge">✦ &nbsp; 功能原型</div></div>
+      <div id="archiveView">
+      <div class="back">檔案總管 &nbsp; / &nbsp; 智慧整理 &nbsp; / &nbsp; 快速歸檔</div>
+      <div class="heading"><div><div class="eyebrow">FILE EXPLORER · SMART ORGANIZE</div><h1>快速歸檔</h1><p>整理 NAS 裡的散亂檔案，或將外接裝置內容歸檔到 NAS。</p></div><div class="badge">✦ &nbsp; 功能原型</div></div>
       <div class="notice" id="notice"></div>
       <div class="grid">
         <section class="card" aria-labelledby="config-title">
           <div class="card-head"><div class="number">1</div><div><h2 id="config-title">設定整理方式</h2><small>選擇來源、條件與目的地</small></div></div>
           <form id="ruleForm" class="form">
-            <div class="field"><label class="label" for="mode">整理情境</label><div class="path"><span>✦</span><select id="mode"><option value="nas">整理 NAS 資料夾</option><option value="usb">整理 USB 隨身碟 · 1 TB</option><option value="phone">整理手機儲存空間 · 128 GB</option><option value="cards">名片照片辨識成表格</option></select></div></div>
+            <div class="field"><label class="label" for="mode">整理情境</label><div class="path"><span>✦</span><select id="mode"><option value="nas">整理 NAS 資料夾</option><option value="usb">整理 USB 隨身碟 · 1 TB</option><option value="phone">整理手機儲存空間 · 128 GB</option></select></div></div>
             <div id="nasFields">
               <div class="field"><label class="label" for="nasSource">來源資料夾</label><div class="path"><span class="folder">📁</span><select id="nasSource"><option>Home</option><option>Download</option><option>Music</option><option>Photos</option></select></div><label class="check"><input type="checkbox" id="recursive"> 包含子資料夾中的檔案</label></div>
               <div class="field"><label class="label" for="extension">篩選檔案類型</label><select id="extension"><option value="mp3">MP3 音訊檔（.mp3）</option><option value="pdf">PDF 文件（.pdf）</option><option value="jpg">JPG 圖片（.jpg）</option><option value="all">所有檔案</option></select></div>
@@ -35,22 +37,29 @@
               <div class="field"><span class="label">整理方式</span><div class="segment"><label><input type="radio" name="organize" value="type" checked>依檔案類型</label><label><input type="radio" name="organize" value="date">依日期</label><label><input type="radio" name="organize" value="name">依名稱</label></div><p class="caption" id="organizeHint"></p></div>
               <div class="field hidden" id="keywordField"><label class="label" for="keywords">名稱分類關鍵字 <span class="hint">（逗號分隔）</span></label><input id="keywords" type="text" value="旅行,工作,家人" placeholder="例如：旅行,工作,家人"><p class="caption">沒有符合關鍵字的檔案會放進「其他」。</p></div>
             </div>
-            <div id="ocrFields" class="hidden">
-              <div class="field"><label class="label" for="ocrSource">名片照片來源資料夾</label><div class="path"><span class="folder">📁</span><select id="ocrSource"><option value="USB:/名片待整理">USB:/名片待整理</option><option value="手機:/DCIM/BusinessCards">手機:/DCIM/BusinessCards</option><option value="Home/名片照片">Home/名片照片</option></select></div><p class="caption">選取要辨識的照片；本原型使用示意檔案及預先準備的辨識結果。</p><div id="ocrPhotos" class="ocr-file-list"></div><button class="btn" type="button" id="scanCards" style="margin-top:12px">✧ &nbsp;掃描名片並擷取資料</button></div>
-              <div class="field"><span class="label">匯出欄位</span><div id="ocrColumns" class="tool-row"></div><p class="caption">可調整表格欄位，匯出時只包含勾選欄位。</p></div>
-              <div class="field"><label class="label" for="classifyBy">依欄位整理原始照片</label><div class="path"><span>▤</span><select id="classifyBy"><option value="Company">公司</option><option value="Country">國家／地區</option><option value="Title">職稱</option></select></div><div class="segment" style="margin-top:10px"><label><input type="radio" name="ocrAction" value="copy" checked>複製照片到分類資料夾</label><label><input type="radio" name="ocrAction" value="move">移動照片到分類資料夾</label></div><p class="caption">依辨識結果建立分類資料夾；分類前可先預覽，來源照片預設保留。</p></div>
-            </div>
             <hr class="divider">
             <div class="field"><label class="label" for="destination">NAS 目的資料夾</label><div class="path-dest"><span class="folder">📁</span><select id="destination"><option value="666">666</option><option value="Home">Home</option><option value="Media">Media</option><option value="Photos">Photos</option></select></div><p class="caption" id="destinationHint"></p></div>
-            <div class="field" id="genericActionField"><span class="label">處理方式</span><div class="segment"><label><input type="radio" name="action" value="copy" checked>複製檔案</label><label><input type="radio" name="action" value="move">移動檔案</label></div><p class="caption" id="actionHint"></p></div>
+            <div class="field"><span class="label">處理方式</span><div class="segment"><label><input type="radio" name="action" value="copy" checked>複製檔案</label><label><input type="radio" name="action" value="move">移動檔案</label></div><p class="caption" id="actionHint"></p></div>
           </form>
         </section>
         <div class="right-stack">
           <section class="card" aria-labelledby="summary-title"><div class="card-head"><div class="number">2</div><div><h2 id="summary-title">整理預覽</h2><small>變更設定後，預覽會即時更新</small></div></div><div class="summary"><div class="summary-title">整理路徑</div><div class="flow"><div class="flow-box"><small>來源</small><strong id="fromText"></strong></div><div class="arrow">→</div><div class="flow-box"><small>NAS 目的地</small><strong id="toText"></strong></div></div><div class="rule-tags" id="tags"></div></div></section>
-          <section class="card" id="filePreview" aria-labelledby="preview-title"><div class="preview-head"><h2 id="preview-title">符合條件的檔案</h2><span id="count"></span></div><div class="preview-actions"><label class="select-all"><input type="checkbox" id="selectAll" checked> 全選</label><button class="text-button" type="button" id="rescan">↻ 重新掃描</button></div><div id="fileList" class="file-list"></div><div class="preview-foot" id="previewFoot"></div></section>
-          <section class="card hidden" id="ocrPreview" aria-labelledby="ocr-preview-title"><div class="preview-head"><div><h2 id="ocr-preview-title">辨識結果</h2><span id="ocrSummary">尚未掃描</span></div><span class="badge">OCR 示意</span></div><div class="preview-actions"><label class="select-all"><input type="checkbox" id="selectAllRecords" checked> 全選紀錄</label><span id="ocrAccuracy" class="muted">可編輯欄位校正結果</span></div><div id="ocrResults" class="ocr-table-wrap"></div><div class="ocr-tools"><div class="tool-row"><strong>匯出到 NAS</strong><button class="pill-choice selected" data-export="Excel">Excel</button><button class="pill-choice" data-export="CSV">CSV</button><button class="pill-choice" data-export="PDF">PDF</button><button class="btn primary" type="button" id="exportCards">匯出表格</button></div><div class="tool-row"><strong>原始照片</strong><span>依「</span><span id="classifyLabel">公司</span><span>」分類</span><button class="btn" type="button" id="previewClassification">預覽分類</button><button class="btn" type="button" id="applyClassification">模擬整理照片</button></div><div id="ocrOutput" class="ocr-status hidden" role="status" aria-live="polite"></div><div id="classificationPreview" class="hidden"><div class="muted" style="font-size:12px">預覽將建立的分類資料夾（已選取紀錄）</div><div class="ocr-groups" id="classificationGroups"></div></div></div><div class="preview-foot">ⓘ &nbsp;姓名、公司、電話等均為虛構示意資料；本原型不會執行真實 OCR 或寫入 NAS。</div></section>
+          <section class="card" aria-labelledby="preview-title"><div class="preview-head"><h2 id="preview-title">符合條件的檔案</h2><span id="count"></span></div><div class="preview-actions"><label class="select-all"><input type="checkbox" id="selectAll" checked> 全選</label><button class="text-button" type="button" id="rescan">↻ 重新掃描</button></div><div id="fileList" class="file-list"></div><div class="preview-foot" id="previewFoot"></div></section>
           <div class="actions"><div class="actions-note">執行前可先檢查條件及目的地。<br>原型使用示意資料，不會更動檔案。</div><div class="buttons"><button class="btn" type="button" id="reset">重設</button><button class="btn primary" type="button" id="review">確認並模擬整理 →</button></div></div><div id="status" class="status" role="status" aria-live="polite"></div>
         </div>
+      </div>
+      </div>
+      <div id="aiView" class="ai-panel hidden">
+        <div class="back">檔案總管 &nbsp; / &nbsp; 智慧整理 &nbsp; / &nbsp; NASH AI</div>
+        <div class="ai-hero"><div class="ai-icon">✦</div><div class="eyebrow">YOUR NAS ASSISTANT</div><h1>NASH AI</h1><p>用對話探索檔案整理的可能性。</p></div>
+        <div class="notice">ⓘ 這是對話介面示意，尚未連接 AI 或 NAS；回覆為預設範例，不會讀取或修改檔案。請勿輸入敏感資料。</div>
+        <section class="card ai-chat" aria-label="NASH AI 示意對話">
+          <div class="card-head"><div class="number">✦</div><div><h2>NASH AI 助理</h2><small>示意對話 · 不連線外部服務</small></div></div>
+          <div class="ai-messages" id="aiMessages" role="log" aria-live="polite"><div class="bubble"><strong>NASH AI · 示意</strong>你好！我可以示範如何協助你整理 NAS 檔案。試試下方的範例問題，或輸入你的需求。</div></div>
+          <div class="ai-suggestions"><button class="prompt" type="button" data-prompt="如何整理隨身碟裡的照片？">如何整理隨身碟裡的照片？</button><button class="prompt" type="button" data-prompt="把 Home 的 MP3 整理到 666">把 Home 的 MP3 整理到 666</button><button class="prompt" type="button" data-prompt="可以幫我做什麼？">可以幫我做什麼？</button></div>
+          <form id="aiForm" class="ai-compose"><input id="aiInput" type="text" maxlength="500" aria-label="輸入訊息" placeholder="輸入你的需求，例如：幫我整理照片" autocomplete="off"><button class="btn primary" type="submit">送出</button></form>
+          <div class="ai-note">這是固定回覆的示意介面，不具備真實 AI 對話或檔案操作能力。</div>
+        </section>
       </div>
     </main>
   </div>
@@ -84,39 +93,22 @@ const examples={
     {name:'工作_白板紀錄.png',date:'2026-05-04'},
     {name:'語音備忘錄.m4a',date:'2026-04-13'},
     {name:'收據_咖啡店.pdf',date:'2026-03-02'}
-  ],
-  cards:[
-    {name:'business-card-01.jpg',fields:{Name:'Alex Morgan',Title:'Product Manager',Company:'Northstar Labs',Phone:'000-555-0101',Email:'alex@northstar.example',Country:'US'}},
-    {name:'business-card-02.jpg',fields:{Name:'Riley Chen',Title:'Design Director',Company:'Blue Harbor Studio',Phone:'000-555-0102',Email:'riley@blueharbor.example',Country:'TW'}},
-    {name:'business-card-03.jpg',fields:{Name:'Sam Taylor',Title:'Sales Lead',Company:'Maple Systems',Phone:'000-555-0103',Email:'sam@maple.example',Country:'CA'}},
-    {name:'business-card-04.jpg',fields:{Name:'Jordan Lee',Title:'Engineer',Company:'Northstar Labs',Phone:'000-555-0104',Email:'jordan@northstar.example',Country:'US'}}
   ]
 };
 const $=id=>document.getElementById(id), form=$('ruleForm'), status=$('status'), modal=$('modal');
-const ocrFields=['Name','Title','Company','Phone','Email','Country'];
-let selected=new Set(), selectedRecords=new Set(), selectedPhotos=new Set(examples.cards.map(file=>file.name)), selectedOcrColumns=new Set(ocrFields), scanned=false, exportFormat='Excel', pendingCardClassification=false;
+let selected=new Set();
 function mode(){return $('mode').value}
 function setMode(value){
   $('mode').value=value;
-  const isNas=value==='nas',isCards=value==='cards';
-  $('nasFields').classList.toggle('hidden',!isNas);
-  $('externalFields').classList.toggle('hidden',isNas||isCards);
-  $('ocrFields').classList.toggle('hidden',!isCards);
-  $('device').value=isNas||isCards?'usb':value;
-  form.querySelector(`input[name="action"][value="${isNas?'move':'copy'}"]`).checked=true;
-  if(isCards){
-    selectedRecords=new Set(examples.cards.map((_,i)=>i));
-  }else{
-    selected=new Set(examples[isNas?'nas':value].map((_,i)=>i));
-  }
+  $('nasFields').classList.toggle('hidden',value!=='nas');
+  $('externalFields').classList.toggle('hidden',value==='nas');
+  $('device').value=value==='nas'?'usb':value;
+  form.querySelector(`input[name="action"][value="${value==='nas'?'move':'copy'}"]`).checked=true;
+  selected=new Set(examples[value==='nas'?'nas':value].map((_,i)=>i));
   render();
 }
 function state(){
   const current=mode(), destination=$('destination').value, action=form.elements.action.value;
-  if(current==='cards'){
-    const records=scanned?examples.cards.map((record,index)=>({...record,index})).filter(record=>selectedPhotos.has(record.name)):[];
-    return {current,source:$('ocrSource').value,destination,action:form.elements.ocrAction.value,files:records,chosen:records.filter(record=>selectedRecords.has(record.index)),photos:examples.cards.filter(file=>selectedPhotos.has(file.name))};
-  }
   if(current==='nas'){
     const source=$('nasSource').value, extension=$('extension').value, keyword=$('keyword').value.trim().toLocaleLowerCase(), date=$('date').value, recursive=$('recursive').checked;
     const files=examples.nas.map((file,index)=>({...file,index,group:'',target:destination})).filter(f=>(f.path===source||(recursive&&f.path.startsWith(source+'/')))&&(extension==='all'||f.name.toLocaleLowerCase().endsWith('.'+extension))&&(!keyword||f.name.toLocaleLowerCase().includes(keyword))&&(!date||f.date<date));
@@ -133,8 +125,6 @@ function state(){
   return {current,source:device,destination,action,organize,keywords,files,chosen:files.filter(f=>selected.has(f.index))};
 }
 function render(){
-  if(mode()==='cards'){renderCards();return}
-  $('genericActionField').classList.remove('hidden');
   const s=state(), isNas=s.current==='nas', isUsb=s.source==='usb';
   $('crumbSource').textContent=isNas?s.source:isUsb?'USB 隨身碟':'手機儲存空間';
   $('homeNav').classList.toggle('active',isNas);
@@ -177,68 +167,8 @@ function render(){
   $('previewFoot').textContent=isNas?'ⓘ 此清單為示意資料，並非 NAS 即時掃描結果。':'ⓘ 分類目的地依預覽建立；裝置及檔案均為示意資料。';
   status.textContent='';status.classList.remove('error');
 }
-function renderCards(){
-  const s=state();
-  $('crumbSource').textContent='名片照片';
-  $('homeNav').classList.remove('active');$('usbNav').classList.remove('active');$('phoneNav').classList.remove('active');
-  $('notice').textContent='ⓘ 選取名片照片，模擬 OCR 擷取聯絡資料；可校正表格、匯出，並依公司或國家整理原始照片。本原型使用虛構示意資料，不會執行真實辨識或寫入 NAS。';
-  $('fromText').textContent='📁 '+s.source;
-  $('toText').textContent='📁 '+s.destination;
-  $('destinationHint').textContent='辨識表格及依欄位整理的照片都會存放於此 NAS 資料夾。';
-  $('actionHint').textContent='處理方式分別在名片照片設定中選擇；此處不套用。';
-  $('schedule').closest('.field').classList.add('hidden');
-  $('filePreview').classList.add('hidden');$('ocrPreview').classList.remove('hidden');
-  document.querySelector('.actions').classList.add('hidden');
-  $('genericActionField').classList.add('hidden');
-  $('tags').replaceChildren(...[
-    scanned?`${s.chosen.length} 筆資料已選取`:'尚未執行辨識',
-    `來源照片 ${s.photos.length} 張`,
-    `整理方式：依 ${$('classifyBy').selectedOptions[0].textContent}`
-  ].map(text=>{const el=document.createElement('span');el.className='tag';el.textContent=text;return el}));
-  $('classifyLabel').textContent=$('classifyBy').selectedOptions[0].textContent;
-  $('ocrPhotos').replaceChildren();
-  for(const file of examples.cards){
-    const label=document.createElement('label');label.className='ocr-photo';
-    const checkbox=document.createElement('input');checkbox.type='checkbox';checkbox.checked=selectedPhotos.has(file.name);checkbox.dataset.photo=file.name;
-    const icon=document.createElement('span');icon.textContent='▧';
-    const name=document.createElement('span');name.textContent=file.name;
-    label.append(checkbox,icon,name);$('ocrPhotos').append(label);
-  }
-  $('ocrColumns').replaceChildren();
-  for(const field of ocrFields){
-    const label=document.createElement('label');label.style.display='flex';label.style.alignItems='center';label.style.gap='4px';
-    const checkbox=document.createElement('input');checkbox.type='checkbox';checkbox.checked=selectedOcrColumns.has(field);checkbox.dataset.column=field;checkbox.className='file-select';
-    label.append(checkbox,document.createTextNode(field));$('ocrColumns').append(label);
-  }
-  $('ocrSummary').textContent=scanned?`已辨識 ${s.files.length} 筆示意資料`:'尚未掃描名片照片';
-  $('selectAllRecords').checked=s.files.length>0&&s.chosen.length===s.files.length;
-  $('ocrResults').replaceChildren();
-  if(!scanned){
-    const empty=document.createElement('div');empty.className='empty';empty.textContent='選取來源照片後，按「掃描名片並擷取資料」查看表格。';$('ocrResults').append(empty);
-  }else{
-    const visibleFields=ocrFields.filter(field=>selectedOcrColumns.has(field));
-    const table=document.createElement('table');table.className='ocr-table';
-    const head=document.createElement('thead'),headRow=document.createElement('tr');
-    const selectHead=document.createElement('th');selectHead.textContent='選取';headRow.append(selectHead);
-    for(const field of visibleFields){const th=document.createElement('th');th.textContent=field;headRow.append(th)}
-    head.append(headRow);table.append(head);
-    const body=document.createElement('tbody');
-    for(const record of s.files){
-      const row=document.createElement('tr');
-      const selectCell=document.createElement('td'),checkbox=document.createElement('input');checkbox.type='checkbox';checkbox.checked=selectedRecords.has(record.index);checkbox.dataset.record=record.index;checkbox.className='file-select';checkbox.setAttribute('aria-label','選取 '+record.fields.Name);selectCell.append(checkbox);row.append(selectCell);
-      for(const field of visibleFields){
-        const cell=document.createElement('td'),input=document.createElement('input');input.type='text';input.value=record.fields[field];input.dataset.record=record.index;input.dataset.field=field;input.setAttribute('aria-label',`${record.fields.Name} ${field}`);cell.append(input);row.append(cell);
-      }
-      body.append(row);
-    }
-    table.append(body);$('ocrResults').append(table);
-  }
-  document.querySelectorAll('[data-export]').forEach(button=>button.classList.toggle('selected',button.dataset.export===exportFormat));
-  status.textContent='';status.classList.remove('error');
-}
 form.addEventListener('input',render);
 form.addEventListener('change',e=>{
-  if(e.target.matches('[data-photo],[data-column],[data-record]')||e.target.id==='selectAllRecords')return;
   if(e.target.id==='mode'){setMode(e.target.value);return}
   if(e.target.id==='device'){const next=e.target.value;setMode(next);return}
   if(e.target.id==='nasSource'||e.target.id==='extension'||e.target.id==='recursive'){
@@ -247,49 +177,11 @@ form.addEventListener('change',e=>{
   render();
 });
 $('fileList').addEventListener('change',e=>{if(e.target.matches('.file-select')){const index=Number(e.target.dataset.index);e.target.checked?selected.add(index):selected.delete(index);render()}});
-$('ocrPhotos').addEventListener('click',e=>{if(e.target.matches('[data-photo]')){const name=e.target.dataset.photo,checked=e.target.checked;setTimeout(()=>{checked?selectedPhotos.add(name):selectedPhotos.delete(name);renderCards()},0)}});
-$('ocrColumns').addEventListener('click',e=>{if(e.target.matches('[data-column]')){const field=e.target.dataset.column,checked=e.target.checked;setTimeout(()=>{if(!checked&&selectedOcrColumns.size===1){renderCards();status.textContent='匯出至少需要保留一個欄位。';return}checked?selectedOcrColumns.add(field):selectedOcrColumns.delete(field);renderCards()},0)}});
-$('ocrResults').addEventListener('click',e=>{if(e.target.matches('[data-record]')&&e.target.type==='checkbox'){const index=Number(e.target.dataset.record),checked=e.target.checked;setTimeout(()=>{checked?selectedRecords.add(index):selectedRecords.delete(index);renderCards()},0)}});
-$('ocrResults').addEventListener('input',e=>{if(e.target.matches('[data-field]')){examples.cards[Number(e.target.dataset.record)].fields[e.target.dataset.field]=e.target.value}});
-$('selectAllRecords').addEventListener('click',e=>{const checked=e.target.checked;setTimeout(()=>{selectedRecords=checked?new Set(state().files.map(record=>record.index)):new Set();renderCards()},0)});
-$('scanCards').addEventListener('click',()=>{
-  if(!selectedPhotos.size){status.textContent='請先選取至少一張名片照片。';status.classList.add('error');return}
-  scanned=true;selectedRecords=new Set(examples.cards.map((file,index)=>selectedPhotos.has(file.name)?index:null).filter(index=>index!==null));renderCards();
-  $('ocrOutput').classList.remove('hidden');$('ocrOutput').textContent=`模擬辨識完成：從 ${selectedPhotos.size} 張示意照片擷取 ${selectedRecords.size} 筆聯絡資料。請檢查並校正表格內容。`;
-});
-document.querySelector('[data-export="Excel"]').addEventListener('click',()=>setExportFormat('Excel'));
-document.querySelector('[data-export="CSV"]').addEventListener('click',()=>setExportFormat('CSV'));
-document.querySelector('[data-export="PDF"]').addEventListener('click',()=>setExportFormat('PDF'));
-function setExportFormat(format){exportFormat=format;renderCards()}
-$('exportCards').addEventListener('click',()=>{
-  const s=state();
-  if(!scanned||!s.chosen.length){status.textContent='請先掃描照片並選取至少一筆辨識結果。';status.classList.add('error');return}
-  if(!selectedOcrColumns.size){status.textContent='匯出至少需要保留一個欄位。';status.classList.add('error');return}
-  const extension=exportFormat==='Excel'?'xlsx':exportFormat.toLowerCase();
-  $('ocrOutput').classList.remove('hidden');$('ocrOutput').textContent=`模擬匯出 ${s.chosen.length} 筆、${selectedOcrColumns.size} 個欄位為 ${exportFormat}，儲存至 /${s.destination}/名片聯絡人.${extension}。此原型不會建立實際檔案。`;
-});
-$('classifyBy').addEventListener('change',()=>{renderCards();$('classificationPreview').classList.add('hidden')});
-$('previewClassification').addEventListener('click',()=>{
-  const s=state();
-  if(!scanned||!s.chosen.length){status.textContent='請先掃描照片並選取至少一筆辨識結果。';status.classList.add('error');return}
-  const field=$('classifyBy').value,groups=new Map();
-  for(const record of s.chosen){const key=record.fields[field].trim()||'未分類';groups.set(key,(groups.get(key)||0)+1)}
-  $('classificationGroups').replaceChildren(...[...groups].map(([name,count])=>{const el=document.createElement('span');el.className='ocr-group';el.textContent=`${name} · ${count} 張照片`;return el}));
-  $('classificationPreview').classList.remove('hidden');status.textContent=`分類預覽：將 ${s.chosen.length} 張照片整理成 ${groups.size} 個資料夾。`;status.classList.remove('error');
-});
-$('applyClassification').addEventListener('click',()=>{
-  const s=state();
-  if(!scanned||!s.chosen.length){status.textContent='請先掃描照片並選取至少一筆辨識結果。';status.classList.add('error');return}
-  pendingCardClassification=true;
-  $('modalTitle').textContent='確認整理名片照片';
-  $('modalText').textContent=`依「${$('classifyBy').selectedOptions[0].textContent}」${s.action==='copy'?'複製':'移動'} ${s.chosen.length} 張示意名片照片到 NAS「${s.destination}」下的分類資料夾。此操作不會更動實際檔案。`;
-  modal.classList.remove('hidden');$('cancel').focus();
-});
 $('selectAll').addEventListener('change',()=>{selected=$('selectAll').checked?new Set(state().files.map(f=>f.index)):new Set();render()});
 $('rescan').addEventListener('click',()=>{selected=new Set(state().files.map(f=>f.index));render();status.textContent='掃描完成：已更新示意檔案清單。'});
-function reset(){form.reset();scanned=false;selectedPhotos=new Set(examples.cards.map(file=>file.name));selectedOcrColumns=new Set(ocrFields);exportFormat='Excel';$('ocrOutput').classList.add('hidden');$('classificationPreview').classList.add('hidden');setMode('nas');selected=new Set(state().files.map(f=>f.index));render()}
+function reset(){form.reset();setMode('nas');selected=new Set(state().files.map(f=>f.index));render()}
 $('reset').addEventListener('click',reset);$('resetTop').addEventListener('click',reset);
-function closeModal(){modal.classList.add('hidden');$('modalTitle').textContent='確認整理內容';$('review').focus()}
+function closeModal(){modal.classList.add('hidden');$('review').focus()}
 $('review').addEventListener('click',()=>{
   const s=state(), isNas=s.current==='nas';
   if(isNas&&s.source===s.destination){status.textContent='來源與目的資料夾不可相同，請重新選擇。';status.classList.add('error');return}
@@ -298,19 +190,44 @@ $('review').addEventListener('click',()=>{
   $('modalText').textContent=`將${s.action==='copy'?'複製':'移動'} ${s.chosen.length} 個示意檔案，從 ${isNas?s.source:s.source==='usb'?'USB 隨身碟':'手機儲存空間'} 整理到 NAS「${s.destination}」。${isNas?'':'分類目的地：'+targets.join('、')+'。'}執行時間：${when}。同名檔案將跳過，不覆蓋。此操作不會更動實際檔案。`;
   modal.classList.remove('hidden');$('cancel').focus();
 });
-$('cancel').addEventListener('click',()=>{pendingCardClassification=false;closeModal()});
-$('confirm').addEventListener('click',()=>{
-  const s=state();
-  if(pendingCardClassification){
-    pendingCardClassification=false;closeModal();
-    $('ocrOutput').classList.remove('hidden');
-    $('ocrOutput').textContent=`模擬完成：${s.chosen.length} 張名片照片已依 ${$('classifyBy').selectedOptions[0].textContent} 整理到 NAS「${s.destination}」。未移動任何實際檔案。`;
-    return;
-  }
-  closeModal();status.textContent=`模擬完成：${s.chosen.length} 個示意檔案符合整理條件。未連接 NAS 或外接裝置，也未移動任何實際檔案。`;status.classList.remove('error')
-});
+$('cancel').addEventListener('click',closeModal);
+$('confirm').addEventListener('click',()=>{const s=state();closeModal();status.textContent=`模擬完成：${s.chosen.length} 個示意檔案符合整理條件。未連接 NAS 或外接裝置，也未移動任何實際檔案。`;status.classList.remove('error')});
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.classList.contains('hidden'))closeModal()});
+$('smartNav').addEventListener('click',()=>{
+  const expanded=$('smartNav').getAttribute('aria-expanded')==='true';
+  $('smartNav').setAttribute('aria-expanded',String(!expanded));
+  $('smartEntries').classList.toggle('hidden',expanded);
+});
+function showView(view){
+  const ai=view==='ai';
+  $('archiveView').classList.toggle('hidden',ai);
+  $('aiView').classList.toggle('hidden',!ai);
+  $('resetTop').classList.toggle('hidden',ai);
+  $('archiveEntry').removeAttribute('aria-current');
+  $('aiEntry').removeAttribute('aria-current');
+  $(ai?'aiEntry':'archiveEntry').setAttribute('aria-current','page');
+  if(ai){$('crumbSource').textContent='NASH AI';$('homeNav').classList.remove('active');$('usbNav').classList.remove('active');$('phoneNav').classList.remove('active')}
+  else render();
+}
+$('archiveEntry').addEventListener('click',()=>showView('archive'));
+$('aiEntry').addEventListener('click',()=>showView('ai'));
+function addMessage(role,text){
+  const bubble=document.createElement('div');bubble.className='bubble'+(role==='user'?' user':'');
+  const label=document.createElement('strong');label.textContent=role==='user'?'你':'NASH AI · 示意';
+  bubble.append(label,document.createTextNode(text));$('aiMessages').append(bubble);bubble.scrollIntoView({block:'nearest'});
+}
+function sendDemoMessage(text){
+  const message=text.trim();if(!message)return;
+  addMessage('user',message);
+  let reply='這是示意回覆。實際 AI 對話與 NAS 操作尚未連接；你可以先使用「快速歸檔」體驗檔案整理流程。';
+  if(message==='如何整理隨身碟裡的照片？')reply='示意建議：前往「快速歸檔」，選擇 USB 隨身碟，依檔案類型分類，預覽後再模擬複製到 NAS。這裡不會讀取或移動真實照片。';
+  if(message==='把 Home 的 MP3 整理到 666')reply='示意建議：前往「快速歸檔」，選擇 Home、MP3 和目的資料夾 666，再確認預覽。這裡不會移動真實檔案。';
+  if(message==='可以幫我做什麼？')reply='這是 NASH AI 的介面示意，可展示對話與檔案整理建議；目前沒有連接 AI、NAS 或實際資料。';
+  addMessage('ai',reply);$('aiInput').value='';
+}
+$('aiForm').addEventListener('submit',e=>{e.preventDefault();sendDemoMessage($('aiInput').value)});
+document.querySelectorAll('.prompt').forEach(button=>button.addEventListener('click',()=>sendDemoMessage(button.dataset.prompt)));
 selected=new Set(examples.nas.map((_,i)=>i));setMode('nas');
 </script>
 </body>
