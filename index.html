@@ -11,7 +11,7 @@
 dialog.app-dialog{border:0;border-radius:12px;padding:0;width:min(620px,calc(100% - 32px));max-height:calc(100% - 32px);color:#24313c;box-shadow:0 24px 80px #102f4260;overflow:auto}dialog.app-dialog::backdrop{background:#142b36a8}.dialog-head{display:flex;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid #e7eef0}.dialog-head h2{margin:0;font-size:16px}.dialog-close{margin-left:auto;background:#f4f7f8;border:0;border-radius:6px;color:#70838d;font-size:21px;line-height:1;padding:5px 9px;cursor:pointer}.launcher-body{padding:26px}.launcher-body h3{margin:0 0 8px;font-size:19px}.launcher-body p{margin:0 0 20px;color:#7b8b94;line-height:1.6}.launcher-options{display:grid;grid-template-columns:1fr 1fr;gap:14px}.launcher-option{background:#fff;text-align:left;border:1px solid #dce8eb;border-radius:9px;padding:18px;cursor:pointer;color:#344751;min-height:140px}.launcher-option:hover{border-color:#29aab8;background:#f5fbfb}.launcher-option strong,.launcher-option small{display:block}.launcher-option strong{font-size:15px;margin:12px 0 6px}.launcher-option small{color:#84969e;line-height:1.5}.launcher-icon{font-size:22px}.ai-dialog{width:min(900px,calc(100% - 32px))!important}.ai-dialog .ai-panel{padding:0 25px 24px}.ai-dialog .ai-hero{padding:22px 20px 12px}.ai-dialog .notice{margin:12px 0}.ai-dialog .ai-chat{min-height:0}.ai-dialog .ai-messages{min-height:160px;max-height:30vh}.dialog-close:focus-visible,.launcher-option:focus-visible{outline:3px solid #8ad9e2;outline-offset:2px}@media(max-width:650px){.launcher-options{grid-template-columns:1fr}.launcher-option{min-height:0}.ai-dialog .ai-panel{padding:0 14px 14px}}
 </style>
 <style>
-.home-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.home-heading h1{font-size:22px;margin:0 0 6px}.home-heading p{color:#7b8b94;margin:0}.home-table{width:100%;border-collapse:collapse;font-size:13px}.home-table th,.home-table td{padding:14px 16px;text-align:left;border-bottom:1px solid #edf1f3}.home-table th{color:#91a0a8;font-size:12px;font-weight:600;background:#f8fafb}.home-table td:first-child{width:60%}.home-table tr:last-child td{border-bottom:0}.home-table .item-icon{margin-right:12px}.home-tip{margin-top:16px;padding:13px 15px;border-radius:7px;background:#f1f8fb;color:#547481;font-size:12px;line-height:1.6}.home-nav{width:100%;border:0;background:transparent;text-align:left;font:inherit;cursor:pointer}.home-nav:focus-visible{outline:2px solid #23a7b6;outline-offset:2px}@media(max-width:650px){.home-table th:last-child,.home-table td:last-child{display:none}.home-table th,.home-table td{padding:12px 9px}.sidebar>#homeNav{display:flex}}
+.home-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.home-heading h1{font-size:22px;margin:0 0 6px}.home-heading p{color:#7b8b94;margin:0}.home-table{width:100%;border-collapse:collapse;font-size:13px}.home-table th,.home-table td{padding:14px 16px;text-align:left;border-bottom:1px solid #edf1f3}.home-table th{color:#91a0a8;font-size:12px;font-weight:600;background:#f8fafb}.home-table td:first-child{width:60%}.home-table tr:last-child td{border-bottom:0}.home-table .item-icon{margin-right:12px}.home-tip{margin-top:16px;padding:13px 15px;border-radius:7px;background:#f1f8fb;color:#547481;font-size:12px;line-height:1.6}.home-nav{width:100%;border:0;background:transparent;text-align:left;font:inherit;cursor:pointer}.home-nav:focus-visible{outline:2px solid #23a7b6;outline-offset:2px}.archive-dialog{width:min(1200px,calc(100% - 32px))!important}.archive-content{padding:24px}.archive-content .heading h1{font-size:22px}.confirm-dialog{width:min(460px,calc(100% - 32px))!important;padding:24px!important}.confirm-dialog h2{margin:0 0 12px;font-size:18px}.confirm-dialog p{line-height:1.7;color:#697c85}.confirm-dialog .buttons{justify-content:flex-end;margin-top:20px}@media(max-width:650px){.home-table th:last-child,.home-table td:last-child{display:none}.home-table th,.home-table td{padding:12px 9px}.sidebar>#homeNav{display:flex}.archive-content{padding:16px}}
 </style>
 </head>
 <body>
@@ -34,7 +34,9 @@ dialog.app-dialog{border:0;border-radius:12px;padding:0;width:min(620px,calc(100
         </tbody></table></div>
         <div class="home-tip">ⓘ 點選左側「智慧整理」，選擇快速歸檔或開啟 AI NASH。此畫面與檔案均為示意資料。</div>
       </div>
-      <div id="archiveView" class="hidden">
+      <dialog id="archiveWindow" class="app-dialog archive-dialog" aria-labelledby="archiveTitle">
+      <div class="dialog-head"><span class="folder">📁</span><h2 id="archiveTitle">快速歸檔</h2><button class="dialog-close" id="closeArchive" type="button" aria-label="關閉快速歸檔視窗">×</button></div>
+      <div id="archiveView" class="archive-content">
       <div class="back">檔案總管 &nbsp; / &nbsp; 智慧整理 &nbsp; / &nbsp; 快速歸檔</div>
       <div class="heading"><div><div class="eyebrow">FILE EXPLORER · SMART ORGANIZE</div><h1>快速歸檔</h1><p>整理 NAS 裡的散亂檔案，或將外接裝置內容歸檔到 NAS。</p></div><div class="badge">✦ &nbsp; 功能原型</div></div>
       <div class="notice" id="notice"></div>
@@ -65,6 +67,7 @@ dialog.app-dialog{border:0;border-radius:12px;padding:0;width:min(620px,calc(100
           <div class="actions"><div class="actions-note">執行前可先檢查條件及目的地。<br>原型使用示意資料，不會更動檔案。</div><div class="buttons"><button class="btn" type="button" id="reset">重設</button><button class="btn primary" type="button" id="review">確認並模擬整理 →</button></div></div><div id="status" class="status" role="status" aria-live="polite"></div>
         </div>
       </div>
+        </dialog>
       </div>
     </main>
   </div>
@@ -90,7 +93,7 @@ dialog.app-dialog{border:0;border-radius:12px;padding:0;width:min(620px,calc(100
         </section>
       </div>
 </dialog>
-<div class="modal-backdrop hidden" id="modal"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalText"><h2 id="modalTitle">確認整理內容</h2><p id="modalText"></p><div class="buttons"><button class="btn" id="cancel" type="button">返回檢查</button><button class="btn primary" id="confirm" type="button">確認模擬整理</button></div></div></div>
+<dialog id="modal" class="app-dialog confirm-dialog" aria-labelledby="modalTitle" aria-describedby="modalText"><h2 id="modalTitle">確認整理內容</h2><p id="modalText"></p><div class="buttons"><button class="btn" id="cancel" type="button">返回檢查</button><button class="btn primary" id="confirm" type="button">確認模擬整理</button></div></dialog>
 <script>
 const examples={
   nas:[
@@ -152,12 +155,6 @@ function state(){
 }
 function render(){
   const s=state(), isNas=s.current==='nas', isUsb=s.source==='usb';
-  $('crumbSource').textContent=$('archiveView').classList.contains('hidden')?'Home':isNas?s.source:isUsb?'USB 隨身碟':'手機儲存空間';
-  const atHome=!$('homeView').classList.contains('hidden');
-  $('homeNav').classList.toggle('active',atHome);
-  $('smartNav').classList.toggle('active',!atHome);
-  if(atHome)$('homeNav').setAttribute('aria-current','page');else $('homeNav').removeAttribute('aria-current');
-  $('usbNav').classList.remove('active');$('phoneNav').classList.remove('active');
   $('notice').textContent=isNas
     ?'ⓘ 依條件整理 NAS 資料夾中的檔案；可手動執行或設定排程。本原型只顯示示意資料，不會連接或修改 NAS。'
     :'ⓘ 外接裝置依類型、日期或名稱分類到 NAS；正式操作建議先複製並保留來源。本原型不會連接裝置或移動檔案。';
@@ -209,32 +206,27 @@ $('selectAll').addEventListener('change',()=>{selected=$('selectAll').checked?ne
 $('rescan').addEventListener('click',()=>{selected=new Set(state().files.map(f=>f.index));render();status.textContent='掃描完成：已更新示意檔案清單。'});
 function reset(){form.reset();setMode('nas');selected=new Set(state().files.map(f=>f.index));render()}
 $('reset').addEventListener('click',reset);$('resetTop').addEventListener('click',reset);
-function closeModal(){modal.classList.add('hidden');$('review').focus()}
+function closeModal(){modal.close();$('review').focus()}
 $('review').addEventListener('click',()=>{
   const s=state(), isNas=s.current==='nas';
   if(isNas&&s.source===s.destination){status.textContent='來源與目的資料夾不可相同，請重新選擇。';status.classList.add('error');return}
   if(!s.chosen.length){status.textContent='目前沒有選取符合條件的檔案，請調整條件或選取檔案。';status.classList.add('error');return}
   const targets=[...new Set(s.chosen.map(f=>f.target))], when=isNas?(s.schedule==='once'?'手動執行一次':(s.schedule==='daily'?'每天 ':'每週一 ')+s.time):'立即手動整理';
   $('modalText').textContent=`將${s.action==='copy'?'複製':'移動'} ${s.chosen.length} 個示意檔案，從 ${isNas?s.source:s.source==='usb'?'USB 隨身碟':'手機儲存空間'} 整理到 NAS「${s.destination}」。${isNas?'':'分類目的地：'+targets.join('、')+'。'}執行時間：${when}。同名檔案將跳過，不覆蓋。此操作不會更動實際檔案。`;
-  modal.classList.remove('hidden');$('cancel').focus();
+  modal.showModal();$('cancel').focus();
 });
 $('cancel').addEventListener('click',closeModal);
 $('confirm').addEventListener('click',()=>{const s=state();closeModal();status.textContent=`模擬完成：${s.chosen.length} 個示意檔案符合整理條件。未連接 NAS 或外接裝置，也未移動任何實際檔案。`;status.classList.remove('error')});
-modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.classList.contains('hidden'))closeModal()});
 $('smartNav').addEventListener('click',()=>$('launcher').showModal());
 $('closeLauncher').addEventListener('click',()=>$('launcher').close());
 $('archiveEntry').addEventListener('click',()=>{
-  $('launcher').close();$('homeView').classList.add('hidden');$('archiveView').classList.remove('hidden');
-  $('resetTop').classList.remove('hidden');$('crumbSection').classList.remove('hidden');$('headerSection').textContent=' / 快速歸檔';render();$('mode').focus();
+  $('launcher').close();$('archiveWindow').showModal();$('mode').focus();
 });
-function showHome(){
-  $('archiveView').classList.add('hidden');$('homeView').classList.remove('hidden');
-  $('resetTop').classList.add('hidden');$('crumbSection').classList.add('hidden');$('headerSection').textContent='';$('crumbSource').textContent='Home';
-  render();
-}
+function showHome(){if($('archiveWindow').open)$('archiveWindow').close()}
 $('backHome').addEventListener('click',showHome);
 $('homeNav').addEventListener('click',showHome);
+$('closeArchive').addEventListener('click',()=>$('archiveWindow').close());
+$('archiveWindow').addEventListener('close',()=>$('smartNav').focus());
 $('aiEntry').addEventListener('click',()=>{$('launcher').close();$('aiWindow').showModal();$('aiInput').focus()});
 $('closeAi').addEventListener('click',()=>$('aiWindow').close());
 $('aiWindow').addEventListener('close',()=>$('smartNav').focus());
